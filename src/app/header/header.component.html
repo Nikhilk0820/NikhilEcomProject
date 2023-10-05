@@ -1,0 +1,16 @@
+<nav class="nav" style="background-color: #2f7df4;">
+  <h1><a routerLink=""><img src="/assets/Flipkartlogo.png" alt="image">FLIP-KART</a> </h1>
+ <div [ngSwitch]="menuType">
+  <ul *ngSwitchCase="'default'" >
+    <li><a routerLink="">Home</a></li>
+    <li><a routerLink="user-auth">Login</a></li>
+    <li><a [routerLink]="cartItems>0?'empty':'empty'">Cart({{cartItems}})</a></li>
+  </ul>
+  <ul *ngSwitchCase="'user'" >
+    <li><a>Welcome {{userName | titlecase}}</a></li>
+    <li><a (click)="userLogout()" >Logout</a></li>
+
+    <li><a [routerLink]="cartItems>0?'cart-page':'empty'">Cart({{cartItems}})</a></li>
+  </ul>
+ </div>
+</nav>
